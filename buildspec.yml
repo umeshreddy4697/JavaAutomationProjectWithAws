@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+  build:
+    commands:
+      - echo Build started on `date`
+      - chmod -R 755 .
+      - mvn test -Dcucumber.filter.tags='@createBookingDataTable'
+      - echo Build completed on `date`
+
+  post_build:
+    commands:
+      - echo Deploy completed on `date`
