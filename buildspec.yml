@@ -11,6 +11,7 @@ phases:
       - mvn test -Dcucumber.filter.tags='@createBookingDataTable'
       - echo Build completed on `date`
 
+
   post_build:
     commands:
       - echo Deploy completed on `date`
